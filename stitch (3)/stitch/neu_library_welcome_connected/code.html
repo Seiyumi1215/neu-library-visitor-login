@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf73",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112119",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>NEU Library Login</title>
+</head>
+<body class="font-display text-slate-900 dark:text-slate-100 min-h-screen bg-fixed bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0ujUZqXWzFQKUQBAaTefGkk2pLcBWmKLvVfAEmEhddNbLLXr-DYAqUGXrz6TF_oDGxz6H7VdqLG3Z4cxCuFSKjfxzmsK05eDcJlynibG71dvXC2LTR_7z5FcPm91Q9T5wnVdAw5WWouN9_KugG9tvZr4BiUCNdG4mM7uOiIUkMJiYqAG6pLUokfuVCYMX3ZGLHkxC-97JAzWu7ZhL4RP1ZOgZIWdXOBdqQa2nI1ylif7V4had4NGs-vxSyNBfy2CiRzftgvgM4tQJo0');">
+<!-- Overlay for better readability -->
+<div class="fixed inset-0 bg-white/80 dark:bg-background-dark/85 backdrop-blur-sm -z-10"></div>
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 flex items-center justify-center">
+<img alt="NEU Logo" class="h-full w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ug46rM6iNh9Zfio55brtU88jYqYfWtvWeE0SIWh7gKDBHvWe70kyCBlFWCvQkwMj6Vz5Gi6vNdsP1QwlLIo6qOmy9Y-9pQwlgqTq_RTvQusgSkZ5wsMjaKDRH30e6G3i9yDmcayyXXujKLn5K0Tw5wcKvf8SshssU8g7KPT2lqgMAygUN3hyG-bT9hfCQZS9WzmevF5ifJd1fHOQx6f_mAIROrA4dx-sf6vhLiFb8VuBL62eHhka-RiQKlepuG60NrBLRDj2HtcMPg"/>
+</div>
+<h1 class="text-xl font-bold tracking-tight">NEU Library</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 cursor-pointer">language</span>
+<div class="bg-slate-200 dark:bg-slate-700 rounded-full size-10 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex items-center justify-center px-6 py-12">
+<div class="max-w-[1000px] w-full flex flex-col gap-10">
+<div class="text-center md:text-left space-y-2">
+<h2 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-slate-50">Welcome to NEU Library</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400">Please select your login type to continue</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-800">
+<div class="h-56 w-full bg-cover bg-center" data-alt="Modern university library study area with books" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAE2CJJuvO4HBCMZV-YEyGeFnwGCYsP_f5CbPVv9z7S3s5JJnRNdzkqYQmyIfX_QF3yUiEUgx90eTQ5_G9E_jXrCFfwIYBU1THLchIS4lMHf0XAn8D79i544HLYfAWQNqKggY3bTTg-2_0t4Xh2od3s3aMT0_oBVcR-a02b9IO7KPawq2Y3bynuIMyosUw2FzYAecAnhV-AGX8h_pZIni5HKk_qmGpzjMng3fkfPG4cYn8SyIubaUxWspjipBZjDp53V9vMltin9PI1");'></div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<h3 class="text-2xl font-bold">Student/Visitor</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                                    Access digital resources, reserve study rooms, search the book catalog, and view your current loans.
+                                </p>
+<a class="mt-auto w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group-hover:gap-3 transition-all" href="{{DATA:SCREEN:SCREEN_18}}"><span>Enter Library</span><span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+</div>
+</div>
+<div class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-800">
+<div class="h-56 w-full bg-cover bg-center" data-alt="Clean minimal administrative office workspace" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDY-oUIQctPgaxZRgFGdlGoPbTRXlK92_Z6-c1SeMTtDt5RY222N8mlCMFTOynplulIf0B9oRFEhb-pcbwI0i2dccWzaebCttQ_9os4DrLH9y9IbNYRFBYoeTWsrQ11azIk9PutLCRFh60t1otLhAFOYtLQPKGLKR5101D-6sWFi8VUUBYYNnzloZKB99yZNlfGfhmrZqPCC3YemoOHNIc1KQQCtw05l5wyT7xPlT3auLA2rYH5ylotOiN6hcrkoFIhBNa148bKM96S");'></div>
+<div class="p-8 flex flex-col flex-1">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+<h3 class="text-2xl font-bold">Administrator Login</h3>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                                    Secure access for staff to manage library collections, user accounts, system analytics, and settings.
+                                </p>
+<a class="mt-auto w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 group-hover:gap-3 transition-all" href="{{DATA:SCREEN:SCREEN_8}}"><span>Admin Login</span><span class="material-symbols-outlined text-lg">lock</span></a>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4 mt-8">
+<a class="text-primary hover:text-primary/80 font-medium underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+                            Need help? Contact library support
+                        </a>
+<div class="flex gap-6 text-slate-500 dark:text-slate-400 text-sm">
+<a class="hover:text-slate-900 dark:hover:text-slate-200" href="#">Privacy Policy</a>
+<a class="hover:text-slate-900 dark:hover:text-slate-200" href="#">Terms of Service</a>
+<a class="hover:text-slate-900 dark:hover:text-slate-200" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="py-8 px-6 md:px-20 text-center text-slate-500 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur">
+<p>© 2024 NEU Library System. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</body></html>

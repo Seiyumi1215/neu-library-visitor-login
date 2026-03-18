@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEU Library Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf73",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112119",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Public Sans", sans-serif;
+    background-image: url(https://lh3.googleusercontent.com/aida/ADBb0ujUZqXWzFQKUQBAaTefGkk2pLcBWmKLvVfAEmEhddNbLLXr-DYAqUGXrz6TF_oDGxz6H7VdqLG3Z4cxCuFSKjfxzmsK05eDcJlynibG71dvXC2LTR_7z5FcPm91Q9T5wnVdAw5WWouN9_KugG9tvZr4BiUCNdG4mM7uOiIUkMJiYqAG6pLUokfuVCYMX3ZGLHkxC-97JAzWu7ZhL4RP1ZOgZIWdXOBdqQa2nI1ylif7V4had4NGs-vxSyNBfy2CiRzftgvgM4tQJo0);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+/* Overlay to ensure readability over the background image */
+.page-overlay {
+    background-color: rgba(246, 248, 247, 0.9)
+    }
+.dark .page-overlay {
+    background-color: rgba(17, 33, 25, 0.92)
+    }</style>
+</head>
+<body class="text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col page-overlay min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-slate-900 px-6 py-3 lg:px-10">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<img alt="NEU Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ug46rM6iNh9Zfio55brtU88jYqYfWtvWeE0SIWh7gKDBHvWe70kyCBlFWCvQkwMj6Vz5Gi6vNdsP1QwlLIo6qOmy9Y-9pQwlgqTq_RTvQusgSkZ5wsMjaKDRH30e6G3i9yDmcayyXXujKLn5K0Tw5wcKvf8SshssU8g7KPT2lqgMAygUN3hyG-bT9hfCQZS9WzmevF5ifJd1fHOQx6f_mAIROrA4dx-sf6vhLiFb8VuBL62eHhka-RiQKlepuG60NrBLRDj2HtcMPg"/>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">NEU Library Admin</h2>
+</div>
+<div class="hidden md:flex flex-col min-w-72">
+<div class="flex w-full items-stretch rounded-lg h-10 bg-primary/5 dark:bg-primary/10 border border-primary/20">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full border-none bg-transparent focus:ring-0 text-sm placeholder:text-slate-400" placeholder="Search by name, email, or college..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="Professional admin user avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAifAwdVNkt1tMuWEt_zPJhBs53z2T0M5RXz1Wm4kfsdLb6DuGVOrBxoAlwUrrixEsYIOmEWC8yonreI2IbVxX0EnQ-EZXs49G5Fyth99r2MttMhSANDs1cSuZ7L9jcb8s6GFEKpf9R8bXMHhJiq0Y1jhJDWREht0xhN0tWSh6dhs9Rruz5MU-7VGl1RVXXSXz3GV_mLSxuAcuPZ5Ccctp9WkGp5aWefw7xLAKoqnCEgvmaRj5k7muLFvr_PJj_iOO_4zXIMBSu2VYV"/>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1440px] mx-auto w-full p-4 lg:p-8 space-y-8">
+<!-- Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+<div class="space-y-1">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">Student Visit Logs</h1>
+<p class="text-slate-500 dark:text-slate-400">Monitor and manage library access and student attendance.</p>
+</div>
+<!-- Date Filter Component -->
+<div class="flex items-center gap-2 bg-white dark:bg-slate-900 p-2 rounded-xl border border-primary/10 shadow-sm">
+<button class="p-2 hover:bg-primary/10 rounded-lg text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2 px-4 font-semibold text-sm">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span>October 24, 2023</span>
+</div>
+<button class="p-2 hover:bg-primary/10 rounded-lg text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Visitors Today</p>
+<span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">group</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-3xl font-bold">1,284</p>
+<span class="text-primary text-sm font-bold flex items-center">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        12%
+                    </span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Peak Hour</p>
+<span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">schedule</span>
+</div>
+<p class="text-3xl font-bold">2:00 PM</p>
+<p class="text-slate-400 text-xs">Based on last 7 days</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Active Currently</p>
+<span class="bg-primary/10 text-primary p-2 rounded-lg material-symbols-outlined">person_pin_circle</span>
+</div>
+<p class="text-3xl font-bold">156</p>
+<p class="text-slate-400 text-xs">Students inside the library</p>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Blocked Records</p>
+<span class="bg-red-500/10 text-red-500 p-2 rounded-lg material-symbols-outlined">block</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-100">12</p>
+<p class="text-slate-400 text-xs">Security flagged entries</p>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-primary/10 flex flex-wrap justify-between items-center gap-4">
+<h3 class="text-lg font-bold">Live Entry Feed</h3>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors text-sm">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Export CSV
+                    </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary/5 dark:bg-primary/5 text-slate-600 dark:text-slate-300 text-sm uppercase font-bold">
+<th class="px-6 py-4">Student Name</th>
+<th class="px-6 py-4">Email Address</th>
+<th class="px-6 py-4">College Program</th>
+<th class="px-6 py-4">Purpose</th>
+<th class="px-6 py-4">Check-in Time</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-xs">JD</div>
+<span class="font-semibold">John Doe</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-400">j.doe@neu.edu.ph</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs font-bold">College of Engineering</span>
+</td>
+<td class="px-6 py-4 text-sm italic">Study / Research</td>
+<td class="px-6 py-4 text-sm font-medium">08:30 AM</td>
+<td class="px-6 py-4 text-right">
+<button class="text-red-500 hover:text-red-600 font-bold text-xs uppercase tracking-wider flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">block</span>
+                                Block
+                            </button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-xs text-primary">SS</div>
+<span class="font-semibold">Sarah Smith</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-400">s.smith@neu.edu.ph</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded text-xs font-bold">College of Arts</span>
+</td>
+<td class="px-6 py-4 text-sm italic">Book Borrowing</td>
+<td class="px-6 py-4 text-sm font-medium">09:15 AM</td>
+<td class="px-6 py-4 text-right">
+<button class="text-red-500 hover:text-red-600 font-bold text-xs uppercase tracking-wider flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">block</span>
+                                Block
+                            </button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-xs">MK</div>
+<span class="font-semibold">Michael Kim</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-400">m.kim@neu.edu.ph</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-300 rounded text-xs font-bold">College of Business</span>
+</td>
+<td class="px-6 py-4 text-sm italic">Online Resources</td>
+<td class="px-6 py-4 text-sm font-medium">10:05 AM</td>
+<td class="px-6 py-4 text-right">
+<button class="text-red-500 hover:text-red-600 font-bold text-xs uppercase tracking-wider flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">block</span>
+                                Block
+                            </button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-xs">EL</div>
+<span class="font-semibold">Emily Luna</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-400">e.luna@neu.edu.ph</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded text-xs font-bold">College of Medicine</span>
+</td>
+<td class="px-6 py-4 text-sm italic">Silent Study Room</td>
+<td class="px-6 py-4 text-sm font-medium">10:45 AM</td>
+<td class="px-6 py-4 text-right">
+<button class="text-red-500 hover:text-red-600 font-bold text-xs uppercase tracking-wider flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">block</span>
+                                Block
+                            </button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-xs">RV</div>
+<span class="font-semibold">Robert Villa</span>
+</div>
+</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-400">r.villa@neu.edu.ph</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded text-xs font-bold">College of Engineering</span>
+</td>
+<td class="px-6 py-4 text-sm italic">Research Assistant</td>
+<td class="px-6 py-4 text-sm font-medium">11:20 AM</td>
+<td class="px-6 py-4 text-right">
+<button class="text-red-500 hover:text-red-600 font-bold text-xs uppercase tracking-wider flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">block</span>
+                                Block
+                            </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-primary/10 flex justify-between items-center text-sm text-slate-500">
+<p>Showing 5 of 1,284 visitors</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-primary/20 hover:bg-primary/5">Previous</button>
+<button class="px-3 py-1 rounded bg-primary text-white">1</button>
+<button class="px-3 py-1 rounded border border-primary/20 hover:bg-primary/5">2</button>
+<button class="px-3 py-1 rounded border border-primary/20 hover:bg-primary/5">3</button>
+<button class="px-3 py-1 rounded border border-primary/20 hover:bg-primary/5">Next</button>
+</div>
+</div>
+</div>
+<!-- Calendar Section / Date Selection (Alternative View) -->
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="flex-1 bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm p-6">
+<h3 class="text-lg font-bold mb-4">Historical Statistics</h3>
+<div class="w-full h-48 bg-primary/5 rounded-lg border border-dashed border-primary/30 flex items-center justify-center text-slate-400">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl block mb-2">analytics</span>
+<p class="text-sm">Visitation Trend Visualization Placeholder</p>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-80 bg-white dark:bg-slate-900 rounded-xl border border-primary/10 shadow-sm p-4">
+<div class="flex items-center justify-between mb-4">
+<button class="p-1 hover:bg-primary/10 rounded-full material-symbols-outlined text-slate-600">chevron_left</button>
+<p class="font-bold text-sm">October 2023</p>
+<button class="p-1 hover:bg-primary/10 rounded-full material-symbols-outlined text-slate-600">chevron_right</button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<span class="text-[10px] font-bold text-slate-400">S</span>
+<span class="text-[10px] font-bold text-slate-400">M</span>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+<span class="text-[10px] font-bold text-slate-400">W</span>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+<span class="text-[10px] font-bold text-slate-400">F</span>
+<span class="text-[10px] font-bold text-slate-400">S</span>
+</div>
+<div class="grid grid-cols-7 gap-1">
+<!-- Placeholder calendar days -->
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">24</div>
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">25</div>
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">26</div>
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">27</div>
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">28</div>
+<div class="h-8 flex items-center justify-center text-xs text-slate-300">29</div>
+<div class="h-8 flex items-center justify-center text-xs">1</div>
+<div class="h-8 flex items-center justify-center text-xs">2</div>
+<div class="h-8 flex items-center justify-center text-xs">3</div>
+<div class="h-8 flex items-center justify-center text-xs">4</div>
+<div class="h-8 flex items-center justify-center text-xs bg-primary text-white rounded-full font-bold">5</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">6</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">7</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer font-bold">8</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">9</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">10</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">11</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">12</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">13</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">14</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer font-bold">15</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">16</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">17</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">18</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">19</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">20</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">21</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer font-bold">22</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">23</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">24</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">25</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">26</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">27</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">28</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer font-bold">29</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">30</div>
+<div class="h-8 flex items-center justify-center text-xs hover:bg-primary/10 rounded-full cursor-pointer">31</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

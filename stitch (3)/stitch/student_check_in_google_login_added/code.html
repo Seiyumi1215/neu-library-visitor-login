@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEU Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#17cf73",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112119",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-image: linear-gradient(rgba(246, 248, 247, 0.9), rgba(246, 248, 247, 0.9)), url(https://lh3.googleusercontent.com/aida/ADBb0ujUZqXWzFQKUQBAaTefGkk2pLcBWmKLvVfAEmEhddNbLLXr-DYAqUGXrz6TF_oDGxz6H7VdqLG3Z4cxCuFSKjfxzmsK05eDcJlynibG71dvXC2LTR_7z5FcPm91Q9T5wnVdAw5WWouN9_KugG9tvZr4BiUCNdG4mM7uOiIUkMJiYqAG6pLUokfuVCYMX3ZGLHkxC-97JAzWu7ZhL4RP1ZOgZIWdXOBdqQa2nI1ylif7V4had4NGs-vxSyNBfy2CiRzftgvgM4tQJo0);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat
+    }
+.dark body {
+    background-image: linear-gradient(rgba(17, 33, 25, 0.92), rgba(17, 33, 25, 0.92)), url(https://lh3.googleusercontent.com/aida/ADBb0ujUZqXWzFQKUQBAaTefGkk2pLcBWmKLvVfAEmEhddNbLLXr-DYAqUGXrz6TF_oDGxz6H7VdqLG3Z4cxCuFSKjfxzmsK05eDcJlynibG71dvXC2LTR_7z5FcPm91Q9T5wnVdAw5WWouN9_KugG9tvZr4BiUCNdG4mM7uOiIUkMJiYqAG6pLUokfuVCYMX3ZGLHkxC-97JAzWu7ZhL4RP1ZOgZIWdXOBdqQa2nI1ylif7V4had4NGs-vxSyNBfy2CiRzftgvgM4tQJo0)
+    }</style>
+</head>
+<body class="font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-primary/10 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 overflow-hidden rounded-lg">
+<img alt="NEU Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ug46rM6iNh9Zfio55brtU88jYqYfWtvWeE0SIWh7gKDBHvWe70kyCBlFWCvQkwMj6Vz5Gi6vNdsP1QwlLIo6qOmy9Y-9pQwlgqTq_RTvQusgSkZ5wsMjaKDRH30e6G3i9yDmcayyXXujKLn5K0Tw5wcKvf8SshssU8g7KPT2lqgMAygUN3hyG-bT9hfCQZS9WzmevF5ifJd1fHOQx6f_mAIROrA4dx-sf6vhLiFb8VuBL62eHhka-RiQKlepuG60NrBLRDj2HtcMPg"/>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">NEU Library</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">New Era University</p>
+<p class="text-[10px] text-slate-500 dark:text-slate-400">Library Management System</p>
+</div>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-primary/10 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12 md:py-20">
+<div class="w-full max-w-[640px] space-y-10">
+<!-- Welcome Section -->
+<div class="text-center space-y-4">
+<h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
+                            Welcome to the <span class="text-primary">NEU Library</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+                            Please complete your digital log-in to access the library facilities and resources.
+                        </p>
+</div>
+<!-- Main Form Container -->
+<div class="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm p-6 md:p-10 rounded-xl shadow-xl shadow-primary/5 border border-primary/10 space-y-8">
+<!-- Step 1: Authentication -->
+<div class="space-y-4">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">Step 1: Identity</label>
+<button class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg h-14 px-6 bg-slate-900 dark:bg-primary text-white hover:opacity-90 transition-all font-bold text-base shadow-lg shadow-primary/20"><span class="material-symbols-outlined">login</span><span>Sign in with Google</span></button><p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-2 font-medium italic">Only @neu.edu.ph accounts are accepted.</p>
+</div>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+<span class="flex-shrink mx-4 text-slate-400 text-sm font-medium">Entry Details</span>
+<div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+</div>
+<!-- Step 2: Selection -->
+<div class="grid grid-cols-1 gap-8">
+<!-- College Program Selection -->
+<div class="space-y-3">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
+<span class="material-symbols-outlined text-primary text-lg">school</span>
+                                    College Program
+                                </label>
+<div class="relative">
+<select class="appearance-none w-full rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 px-4 py-4 text-slate-900 dark:text-slate-100 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none font-medium">
+<option disabled="" selected="" value="">Select your program</option>
+<option value="bit">Bachelor of Information Technology</option>
+<option value="bis">Bachelor of Information System</option>
+<option value="accountancy">Bachelor of Science in Accountancy</option>
+<option value="ba">Bachelor of Science in Business Administration</option>
+<option value="cs">Bachelor of Science in Computer Science</option>
+<option value="nursing">Bachelor of Science in Nursing</option>
+<option value="education">Bachelor of Secondary Education</option>
+<option value="economics">Bachelor of Arts in Economics</option>
+<option value="polsci">Bachelor of Arts in Political Science</option>
+<option value="psych">Bachelor of Science in Psychology</option>
+<option value="realestate">Bachelor of Science in Real Estate Management</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Purpose of Visit Selection -->
+<div class="space-y-3">
+<label class="flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
+<span class="material-symbols-outlined text-primary text-lg">task_alt</span>
+                                    Purpose of Visit
+                                </label>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer group">
+<input class="hidden peer" name="purpose" type="checkbox" value="reading"/>
+<span class="inline-block px-5 py-3 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 peer-checked:bg-primary/10 peer-checked:border-primary peer-checked:text-primary transition-all font-medium">
+                                            Reading
+                                        </span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="purpose" type="checkbox" value="researching"/>
+<span class="inline-block px-5 py-3 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 peer-checked:bg-primary/10 peer-checked:border-primary peer-checked:text-primary transition-all font-medium">
+                                            Researching
+                                        </span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="purpose" type="checkbox" value="studying"/>
+<span class="inline-block px-5 py-3 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 peer-checked:bg-primary/10 peer-checked:border-primary peer-checked:text-primary transition-all font-medium">
+                                            Studying
+                                        </span>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="purpose" type="checkbox" value="computer"/>
+<span class="inline-block px-5 py-3 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 peer-checked:bg-primary/10 peer-checked:border-primary peer-checked:text-primary transition-all font-medium">
+                                            Computer Use
+                                        </span>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-extrabold text-lg h-16 rounded-xl transition-all flex items-center justify-center gap-2 group">
+<span>Confirm Entry</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-slate-500 dark:text-slate-500 mt-4 italic">
+                                By signing in, you agree to follow the NEU Library Rules and Regulations.
+                            </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer Info -->
+<footer class="px-6 md:px-20 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> <span id="current-date">October 24, 2023</span></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> <span id="current-time">09:45 AM</span></span>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>System Online</span>
+</div>
+</footer>
+</div>
+</div>
+<!-- Background Decorative Elements -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
+</body></html>
